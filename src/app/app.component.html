@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="text-center"><h1>Welcome to StonePits Game</h1></div>
+  <div class="text-center"><h1>Player 1 pits</h1></div>
+  <br/>
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="bigpit">{{data.user1BigPitCount}}</h2>
+    </div>
+    <div *ngFor="let pit of data.user1Pits; index as i;" class="col-sm">
+      <div class="pit" (click)="playSelectedPit(i,0)">{{pit}}</div>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+
+  <br/>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm"></div>
+    <div *ngFor="let pit of data.user2Pits; index as i;" class="col-sm">
+      <span class="pit" (click)="playSelectedPit(i,1)">{{pit}}</span>
+    </div>
+    <div class="col-sm">
+      <h2 class="bigpit">{{data.user2BigPitCount}}</h2>
+    </div>
+  </div>
+  <br/>
+  <div class="text-center"><h1>Player 2 pits</h1></div>
+
+  <router-outlet></router-outlet>
